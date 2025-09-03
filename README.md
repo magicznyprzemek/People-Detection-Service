@@ -17,8 +17,8 @@ This project provides asynchronous image processing with scalable task queues, m
 3. Remember to install Redis (https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
 
 ## Launch:
-1. IIn the terminal, run the following command to start Redis: 'redis-server'
-2. n the terminal, run the following command to start FastAPI: 'uvicorn main:app --host 127.0.0.1 --port 8000 --reload'
+1. In the terminal, run the following command to start Redis: 'redis-server'
+2. In the terminal, run the following command to start FastAPI: 'uvicorn main:app --host 127.0.0.1 --port 8000 --reload'
 3. In the terminal, run the following command to start Celery: 'celery -A tasks worker --loglevel=info --concurrency=2 -Q image_queue' (concurrency=x defines the number of parallel workers)
 
 ## Testing:
