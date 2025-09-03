@@ -11,29 +11,19 @@ This project provides asynchronous image processing with scalable task queues, m
 
 ![screenshot1](pic.jpg)
 
-###  Installation
-Clone the repository:
-git clone https://github.com/your-username/person-detection-api.git
-cd person-detection-api
-Download the detection model:
-Get the frozen_inference_graph.pb file from here
-Place it in the /models/ directory:
-/models/frozen_inference_graph.pb
-Install dependencies:
-pip install -r requirements.txt
-### Running the Project
-Start Redis server:
-redis-server
-Run the API (FastAPI):
-uvicorn main:app --host 127.0.0.1 --port 8000 --reload
-Start Celery workers:
-celery -A tasks worker --loglevel=info --concurrency=2 -Q image_queue
-concurrency=2 → number of parallel workers
-### Testing & Monitoring
-1. Swagger UI for API testing:
-http://127.0.0.1:8000/docs
-2. Check active Celery workers:
-celery -A tasks inspect active
+## Installation:
+1. Clone the repository
+2. In the /models/ folder, add the file "frozen_inference_graph.pb" (https://drive.google.com/file/d/1Qc30uGzBU2POIiGgAzSn71XyUP49Gksv/view?usp=share_link)
+3. Remember to install Redis (https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
+
+## Launch:
+1. IIn the terminal, run the following command to start Redis: 'redis-server'
+2. n the terminal, run the following command to start FastAPI: 'uvicorn main:app --host 127.0.0.1 --port 8000 --reload'
+3. In the terminal, run the following command to start Celery: 'celery -A tasks worker --loglevel=info --concurrency=2 -Q image_queue' (concurrency=x defines the number of parallel workers)
+
+## Testing:
+1. http://127.0.0.1:8000/docs - allows you to check the API.
+2. "Celery -A Active Inspection Tasks" - allows you to check worker statuses in the terminal.
 
 ### How It Works
 1. How It Works
