@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+celery
+opencv-python-headless
+python-multipart
+redis
+
+numpy~=2.0.2
